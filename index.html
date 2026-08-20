@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YES24와 알라딘 크롤링 결과를 비교하는 공통 인기 도서 대시보드">
+  <title>두 서점의 공통 인기 도서</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">결과 바로가기</a>
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">YES24 × ALADIN · CRAWLED DATA</p>
+      <h1>두 서점이<br>함께 고른 책</h1>
+      <p class="hero__copy">YES24와 알라딘의 베스트셀러 데이터를 비교해 두 곳에서 함께 사랑받는 책을 장르별로 모았습니다.</p>
+      <dl class="hero__summary" aria-label="데이터 요약">
+        <div><dt>비교 플랫폼</dt><dd>2곳</dd></div><div><dt>큐레이션</dt><dd>3개</dd></div><div><dt>공통 도서</dt><dd id="total-count">0권</dd></div>
+      </dl>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+    <nav class="genre-nav" aria-label="도서 장르 선택">
+      <button class="genre-button is-active" type="button" data-genre="general" aria-pressed="true"><span class="genre-button__number">01</span><span>종합도서</span></button>
+      <button class="genre-button" type="button" data-genre="poetry" aria-pressed="false"><span class="genre-button__number">02</span><span>시</span></button>
+      <button class="genre-button" type="button" data-genre="adultPicture" aria-pressed="false"><span class="genre-button__number">03</span><span>어른그림책</span></button>
+    </nav>
+    <section class="section-heading" aria-live="polite">
+      <div><p class="section-heading__kicker">COMMON PICKS</p><h2 id="genre-title">종합도서</h2><p id="genre-description"></p></div>
+      <div class="result-count"><strong id="book-count">0</strong><span>권</span></div>
+    </section>
+    <div class="toolbar">
+      <p class="data-note" id="data-note"></p>
+      <label class="search"><span class="sr-only">도서 검색</span><input id="book-search" type="search" placeholder="제목, 저자, 출판사 검색" autocomplete="off"></label>
+    </div>
+    <p class="search-result" id="search-result" aria-live="polite"></p>
+    <div class="book-list" id="book-list"></div>
+  </main>
+  <footer>
+    <p>통합 순위는 두 플랫폼 순위의 평균이 낮은 순이며, 동점은 평균 평점이 높은 순입니다.</p>
+    <p>판매부수는 공개되지 않아 YES24 판매지수와 알라딘 세일즈포인트를 사용합니다.</p>
+    <p id="updated-at"></p>
+  </footer>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
